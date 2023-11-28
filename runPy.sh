@@ -1,6 +1,6 @@
 #!/bin/bash
 itr_count=3
-itr = 1
+itr=1
 
 echo "Doing iteration $itr of $itr_count..."
 hdfs dfs -rm -r PR/itr_$((itr))/hub
