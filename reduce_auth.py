@@ -16,9 +16,9 @@ for line in sys.stdin:
         auth_score, hub_score = 0.0, 0.0
         links = None
     if len(kv) > 3:
-        links = kv[3].split(';')
+        links = kv[3]
         hub_score = kv[2]
     else:
         auth_score += float(kv[2])
 os.environ['NORM'] = str(math.sqrt(norm))
-print(f'{node_id}\t{auth_score}\t{hub_score}\t{";".join(links)}')
+print(f'{node_id}\t{auth_score}\t{hub_score}\t{links}')
