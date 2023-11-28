@@ -5,9 +5,9 @@ itr = 1
 echo "Doing iteration $itr of $itr_count..."
 hdfs dfs -rm -r PR/itr_$((itr))/hub
 yarn jar $HADOOP_HOME/share/hadoop/tools/lib/hadoop-streaming-*.jar \
-    -cmdenv NORM=1 \
     -D mapreduce.job.name="PageRank Job via Streaming" \
     -files $(pwd)/map_auth.py,$(pwd)/reduce_auth.py \
+    -cmdenv NORM=1 \
     -input PR/itr_$itr/auth \
     -output PR/itr_$((itr))/hub \
     -mapper "python `pwd`/map_auth.py" \
