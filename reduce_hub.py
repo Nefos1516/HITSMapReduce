@@ -3,7 +3,9 @@ import sys
 import os
 
 norm = 0
-old_node_id, node_id, links = None
+old_node_id = None
+node_id = None
+links = None
 auth_score, hub_score = 0.0
 for line in sys.stdin:
     kv = line.strip().split('\t')
