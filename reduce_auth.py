@@ -11,7 +11,7 @@ for line in sys.stdin:
     old_node_id = node_id
     node_id = kv[0]
     if old_node_id is not None and old_node_id != node_id:
-        print(f'{old_node_id}\t{auth_score}\t{hub_score}\t{";".join(links)}')
+        print(f'{old_node_id}\t{auth_score}\t{hub_score}\t{links}')
         norm += auth_score ** 2
         auth_score, hub_score = 0.0, 0.0
         links = None
