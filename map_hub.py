@@ -12,5 +12,5 @@ for line in sys.stdin:
     links = kv[3].split(';')
     auth_score, hub_score = float(kv[1]), kv[2]
     for link in links:
-        print(f'{link}\t{auth_score / norm}\t{hub_score}')
-    print(f'{node_id}\t{auth_score / norm}\t{hub_score}\t{";".join(links)}')
+        print(f'{link}\t{auth_score / norm}\t{hub_score}\t{node_id}')
+    print(f'{node_id}\t{auth_score / norm}\t{hub_score}')
