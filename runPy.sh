@@ -51,6 +51,8 @@ done
 
 itr=4
 
+hdfs dfs -rm -r PR/itr_$itr/hub
+
 echo "Normalizing final scores..."
 
 yarn jar $HADOOP_HOME/share/hadoop/tools/lib/hadoop-streaming-*.jar \
