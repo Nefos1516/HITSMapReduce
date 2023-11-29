@@ -49,4 +49,15 @@ for ((itr=2; itr <= $itr_count; itr++)); do
         -reducer "python `pwd`/reduce_hub.py"
 done
 
-hdfs dfs -cat PR/itr_$((itr_count+1))/auth/part-00000
+itr=4
+
+echo "Normalizing final scores..."
+
+yarn jar $HADOOP_HOME/share/hadoop/tools/lib/hadoop-streaming-*.jar \
+    -D mapreduce.job.name="HITS Job via Streaming" \
+    -files $(pwd)/norm_hub.py,$(pwd)/.env \
+    -input PR/itr_$itr/auth \
+    -output PR/itr_$itr/hub \
+    -mapper "python `pwd`/norm_hub.py"
+
+hdfs dfs -cat PR/itr_$itr/hub/part-00000

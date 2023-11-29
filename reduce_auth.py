@@ -13,7 +13,7 @@ for line in sys.stdin:
     if old_node_id is not None and old_node_id != node_id:
         print(f'{old_node_id}\t{auth_score}\t{hub_score}\t{links[:len(links) - 1]}')
         norm += auth_score ** 2
-        auth_score, hub_score = 1.0, 1.0
+        auth_score, hub_score = 0.0, 0.0
         links = ''
     if len(kv) > 3:
         links += f'{kv[3]};'
