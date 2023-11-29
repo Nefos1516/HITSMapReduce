@@ -21,4 +21,6 @@ for line in sys.stdin:
     else:
         hub_score += float(kv[1])
 print(f'{node_id}\t{auth_score}\t{hub_score}\t{links}')
-print(str(math.sqrt(norm)))
+
+with open('NORM.txt', 'w') as f:
+    f.write(str(math.sqrt(norm))) 

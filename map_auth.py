@@ -5,8 +5,6 @@ import os
 norm = float(os.environ['NORM'])
 for line in sys.stdin:
     kv = line.strip().split("\t")
-    if len(kv) == 1:
-        continue
     node_id = kv[0]
     links = kv[3].split(';')
     auth_score, hub_score = kv[1], float(kv[2])
