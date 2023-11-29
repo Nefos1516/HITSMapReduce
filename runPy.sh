@@ -49,8 +49,6 @@ for ((itr=2; itr <= $itr_count; itr++)); do
         -reducer "python `pwd`/reduce_hub.py"
 done
 
-itr=4
-
 hdfs dfs -rm -r PR/itr_$itr/hub
 
 echo "Normalizing final scores..."
