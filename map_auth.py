@@ -1,8 +1,11 @@
 #!/usr/bin/python3
 import sys
 import os
+from dotenv import load_dotenv
 
-norm = float(os.environ['NORM'])
+
+load_dotenv()
+norm = float(os.getenv('NORM'))
 for line in sys.stdin:
     kv = line.strip().split("\t")
     node_id = kv[0]
