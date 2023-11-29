@@ -14,7 +14,7 @@ for line in sys.stdin:
         print(f'{old_node_id}\t{auth_score}\t{hub_score}\t{links[:len(links) - 1]}')
         norm += auth_score ** 2
         auth_score, hub_score = 1.0, 1.0
-        links = None
+        links = ''
     if len(kv) > 3:
         links += f'{kv[3]};'
         auth_score += float(kv[2])
