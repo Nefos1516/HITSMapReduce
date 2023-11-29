@@ -11,3 +11,4 @@ for line in sys.stdin:
     for link in links:
         print(f'{link}\t{auth_score / norm}\t{hub_score}')
     print(f'{node_id}\t{auth_score / norm}\t{hub_score}\t{";".join(links)}')
+    

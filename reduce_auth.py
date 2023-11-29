@@ -20,5 +20,5 @@ for line in sys.stdin:
         hub_score = kv[2]
     else:
         auth_score += float(kv[2])
-os.environ['NORM'] = str(math.sqrt(norm))
 print(f'{node_id}\t{auth_score}\t{hub_score}\t{links}')
+print(str(math.sqrt(norm)))

@@ -3,7 +3,7 @@ from random import randint
 
 file = open('input.txt', 'a')
 
-for i in range(1, 50):
+for i in range(1, 51):
     s = ''
     while len(s) < 5:
         for j in range(randint(1, 5)):
